@@ -6,6 +6,6 @@ module.exports = function (sequelize, DataTypes) {
     location: {
       type: DataTypes.
     },
-    })
+  })
   return Doctors
 }
