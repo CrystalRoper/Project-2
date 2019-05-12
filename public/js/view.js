@@ -9,6 +9,7 @@ $(document).ready(function () {
   // .then(function(data){
   var calendar = $('#calendar').fullCalendar({
       editable: true,
+      //height: 350,
       header: {
       left: 'prev,next today',
       center: 'title',
@@ -21,9 +22,10 @@ $(document).ready(function () {
     //  start: '2019-05-07',
     //  end: '2019-05-10'
     //}],
-    
+    displayEventTime: false,
     selectable: true,
     selectHelper: true,
+    
 
     select: function (start, end, allDay) {
       var title = prompt("Enter Event Title");
