@@ -1,10 +1,10 @@
 {
     "development": {
       "username": "root",
-      "password": "Perrin37",
+      "password": "!everagaiN90",
       "database": "ontrack",
       "host": "127.0.0.1",
-      "port": 3307,
+      "port": 3306,
       "dialect": "mysql"
     },
     "test": {
@@ -12,7 +12,7 @@
       "password": "Perrin37",
       "database": "ontrack",
       "host": "127.0.0.1",
-      "port": 3307,
+      "port": 3306,
       "dialect": "mysql"
     },
     "production": {
@@ -20,7 +20,7 @@
       "password": "Perrin37",
       "database": "ontrack",
       "host": "127.0.0.1",
-      "port": 3307,
+      "port": 3306,
       "dialect": "mysql"
     }
   }
