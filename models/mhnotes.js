@@ -1,13 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
   var Mhnotes = sequelize.define('Mhnotes', {
     date: {
-      type: DataTypes.
+      type: DataTypes.DATE
     },
     mood: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     note: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     })
   return Mhnotes

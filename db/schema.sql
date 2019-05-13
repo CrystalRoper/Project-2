@@ -1,8 +1,7 @@
 -- Drops the database if it exists currently --
-DROP DATABASE IF EXISTS ;
+DROP DATABASE IF EXISTS Ontrack;
 -- Creates the database --
-CREATE DATABASE ;
-create DATABASE ontrack;
+CREATE DATABASE Ontrack;
 
 USE ontrack;
 

@@ -1,10 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
   var Prescriptions = sequelize.define('Prescriptions', {
     name: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     dosage: {
-      type: DataTypes.
+      type: DataTypes.STRING
     }
 })
   return Prescriptions

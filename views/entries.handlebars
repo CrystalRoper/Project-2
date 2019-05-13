@@ -1,0 +1,120 @@
+<div class="journalContainer">
+    <form>
+        <div class="form-group" class="creator">
+            <label for="category">Please select the type of entry you would like to make:</label>
+            <select id="selectEntryType" class="form-control" class="category">
+                <option value="rx">Prescription Note</option>
+                <option value="md">Doctor Note</option>
+                <option value="mh">Mental Health Note</option>
+                <option value="ex">Exercise Log</option>
+                <option value="fd">Food Log</option>
+                <option value="bp">Blood Pressure</option>
+            </select>
+        </div>
+        <!-- Prescription Form Inputs -->
+        <div id="prescriptionInputs">
+            <div class="form-group">
+                <label for="rxName">Prescription Name</label>
+                <input type="text" class="form-control" class="rxName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="rxDose">Dosage</label>
+                <input type="text" class="form-control" class="rxDose" placeholder="">
+            </div>
+        </div>
+        <!-- Doctor Form Inputs -->
+        <div id="doctorsNotesInputs">
+            <div class="form-group">
+                <label for="mdName">Doctor Name</label>
+                <input type="text" class="form-control" class="mdName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="mdLocation">Doctor Location</label>
+                <input type="text" class="form-control" class="mdLocation" placeholder="">
+            </div>
+        </div>
+        <!-- Mental Health Form Inputs -->
+        <div id="mentalHealthNotesInputs">
+            <div class="form-group">
+                <label for="mhDate">Date</label>
+                <input type="date" class="form-control" class="mhDate" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="currentMood">Current Mood</label>
+                <input type="text" class="form-control" class="currentMood" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="mhText">Free Format Text Area</label>
+                <textarea class="form-control" class="mhText" rows="3"></textarea>
+            </div>
+        </div>
+        <!-- Exercise Form Inputs -->
+        <div id="exerciseNotesInputs">
+            <div class="form-group">
+                <label for="exerciseDate">Date</label>
+                <input type="date" class="form-control" class="exerciseDate" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exerciseType">Type of Exercise</label>
+                <input type="text" class="form-control" class="exerciseType" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exerciseDuration">Duration (minutes)</label>
+                <input type="integer" class="form-control" class="exerciseDuration" placeholder="">
+            </div>
+        </div>
+        <!-- Food Form Inputs -->
+        <div id="foodNotesInputs">
+            <div class="form-group">
+                <label for="foodDate">Date</label>
+                <input type="date" class="form-control" class="foodDate" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="mealType">Meal</label>
+                <select class="form-control" class="mealType">
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Snack">Snack</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="foodName">Name of Food</label>
+                <input type="text" class="form-control" class="foodName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="foodCal">Calorie Count</label>
+                <input type="integer" class="form-control" class="foodCal" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="foodSug">Sugar Count (g)</label>
+                <input type="integer" class="form-control" class="foodSug" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="foodSalt">Sodium Count (mg)</label>
+                <input type="integer" class="form-control" class="foodSalt" placeholder="">
+            </div>
+        </div>
+        <!-- Blood Pressure Form Inputs -->
+        <div id="bloodPressureNotesInputs">
+            <div class="form-group">
+                <label for="bpDate">Date</label>
+                <input type="date" class="form-control" class="bpDate" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="bpSystolic">Systolic</label>
+                <input type="integer" class="form-control" class="bpSystolic" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="bpDiastolic">Diastolic</label>
+                <input type="integer" class="form-control" class="bpDiastolic" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="bpPulse">Pulse</label>
+                <input type="integer" class="form-control" class="bpPulse" placeholder="">
+            </div>
+        </div>
+        <button id="saveToServer" class="btn btn-primary" class="add_creator" type="button">Submit</button>
+    </form>
+</div>
+<script type="text/javascript" src="js/entries.js"></script>

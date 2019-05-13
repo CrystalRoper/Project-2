@@ -1,22 +1,22 @@
 module.exports = function (sequelize, DataTypes) {
   var Foods = sequelize.define('Foods', {
     date: {
-      type: DataTypes.
+      type: DataTypes.DATE
     },
     meal: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     name: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     calorie: {
-      type: DataTypes.
+      type: DataTypes.INTEGER
     },
     sugar: {
-        type: DataTypes.
+        type: DataTypes.INTEGER
     },
     sodium: {
-        type: DataTypes.
+        type: DataTypes.INTEGER
     }
   })
   return Foods

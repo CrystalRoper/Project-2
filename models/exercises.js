@@ -1,13 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
   var Exercises = sequelize.define('Exercises', {
     date: {
-      type: DataTypes.
+      type: DataTypes.DATE
     },
     type: {
-      type: DataTypes.
+      type: DataTypes.STRING
     },
     duration: {
-      type: DataTypes.
+      type: DataTypes.INTEGER
     }
   })
   return Exercises
