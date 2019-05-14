@@ -1,98 +1,10 @@
-var db = require("../../models");
-var public = require("../public");
+var db = require("../models");
 
 module.exports = function (app, router) {
   router.get('/', function (req, res) {
     res.render("entries", {});
     //res.render("home", {});
   })
-
-
-  function SavePrescription() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        name: req.body.name,
-        dosage: req.body.dosage
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
-
-
-  function SaveDoctorNote() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        name: req.body.name,
-        location: req.body.location
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
-
-
-  function SaveMentalHealthNote() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        date: req.body.date,
-        mood: req.body.mood,
-        note: req.body.note
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
-
-
-  function SaveExerciseNote() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        date: req.body.date,
-        type: req.body.type,
-        duration: req.body.duration
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
-
-
-  function SaveFoodNote() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        date: req.body.date,
-        meal: req.body.meal,
-        name: req.body.name,
-        calorie: req.body.calorie,
-        sugar: req.body.sugar,
-        sodium: req.body.sodium
-
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
-
-
-  function SaveBloodPressureNote() {
-
-    app.post("/", function (req, res) {
-      db.Ontrack.create({
-        date: req.body.name,
-        systolic: req.body.systolic,
-        diastolic: req.body.diastolic,
-        pulse: req.body.pulse
-      }).then(function (dbOntrack) {
-        res.json(dbOntrack);
-      });
-    });
-  };
 };
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
@@ -114,12 +26,16 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/view.html"));
   });
 
+  app.get("/tracker", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/entries.html"));
+  });
+
   app.get("/api/events", function (req, res) {
     // findAll returns all entries for a table when used with no options
-    db.events.findAll({ }).then(function (dbEvents) {
+    db.events.findAll({}).then(function (dbEvents) {
       console.log(dbEvents);
       console.log("accessed api events GET");
-      
+
 
       res.json(dbEvents);
     });
@@ -186,5 +102,73 @@ module.exports = function (app) {
         // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
+  });
+
+  app.post("/api/bps", function (req, res) {
+    db.Bps.create({
+      date: req.body.name,
+      systolic: req.body.systolic,
+      diastolic: req.body.diastolic,
+      pulse: req.body.pulse
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
+  });
+
+  app.post("/api/doctors", function (req, res) {
+    db.Doctors.create({
+      name: req.body.name,
+      location: req.body.location
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
+  });
+
+  app.post("/api/exercises", function (req, res) {
+    db.Exercises.create({
+      date: req.body.date,
+      type: req.body.type,
+      duration: req.body.duration
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
+  });
+
+  app.post("/api/foods", function (req, res) {
+    db.Foods.create({
+      date: req.body.date,
+      meal: req.body.meal,
+      name: req.body.name,
+      calorie: req.body.calorie,
+      sugar: req.body.sugar,
+      sodium: req.body.sodium
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
+  });
+
+  app.post("/api/mhnotes", function (req, res) {
+    db.Mhnotes.create({
+      date: req.body.date,
+      mood: req.body.mood,
+      note: req.body.note
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
+  });
+
+  app.post("/api/prescriptions", function (req, res) {
+    db.Prescriptions.create({
+      name: req.body.name,
+      dosage: req.body.dosage
+    }).then(function (dbOntrack) {
+      res.json(dbOntrack);
+    });
+
   });
 }

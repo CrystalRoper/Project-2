@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 //
@@ -33,7 +33,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-=======
+
 var express = require('express')
 var app = express()
 var passport = require('passport')
@@ -83,7 +83,7 @@ models.sequelize.sync().then(function () {
 }).catch(function (err) {
     console.log(err, "Something went wrong with the Database Update!")
 });
-<<<<<<< HEAD
+
 
 app.listen(3307, function (err) {
   if (!err) {
@@ -92,16 +92,16 @@ app.listen(3307, function (err) {
     console.log(err)
   }
 })
-=======
+
  
 //Models
-var models = require("./app/models");
+var models = require("./models");
  
 //Routes 
-var authRoute = require('./app/routes/auth.js')(app); 
+var authRoute = require('./routes/auth.js')(app); 
  
 //load passport strategies
-require('./app/config/passport/passport.js')(passport, models.user);
+require('./config/passport.js')(passport, models.user);
  
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -111,10 +111,9 @@ models.sequelize.sync().then(function() {
 });
  
  
-app.listen(3307, function(err) {
+app.listen(5000, function(err) {
     if (!err) 
         console.log("Site is live");      
     else console.log(err)
 });
->>>>>>> 0d5210b52d55f668f1c18c25812b0d9073f843c6
->>>>>>> 418e49d3044e589edfeac658c3709d940f33188d
+
