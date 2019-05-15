@@ -106,7 +106,7 @@ module.exports = function (app) {
 
   app.post("/api/bps", function (req, res) {
     db.Bps.create({
-      date: req.body.name,
+      date: req.body.date,
       systolic: req.body.systolic,
       diastolic: req.body.diastolic,
       pulse: req.body.pulse
@@ -171,4 +171,43 @@ module.exports = function (app) {
     });
 
   });
+
+  // GET Routes
+  app.get("/api/prescriptions/all", function (req, res) {
+    db.Prescriptions.findAll({}).then(function (allPrescriptions) {
+      res.json(allPrescriptions);
+    });
+  });
+
+  app.get("/api/doctors/all", function (req, res) {
+    db.Doctors.findAll({}).then(function (allDoctorNotes) {
+      res.json(allDoctorNotes);
+    });
+  });
+
+  app.get("/api/mhnotes/all", function (req, res) {
+    db.Mhnotes.findAll({}).then(function (allMhNotes) {
+      res.json(allMhNotes);
+    });
+  });
+
+  app.get("/api/exercises/all", function (req, res) {
+    db.Exercises.findAll({}).then(function (allExercises) {
+      res.json(allExercises);
+    });
+  });
+
+  app.get("/api/foods/all", function (req, res) {
+    db.Foods.findAll({}).then(function (allFoods) {
+      res.json(allFoods);
+    });
+  });
+
+  app.get("/api/bps/all", function (req, res) {
+    db.Bps.findAll({}).then(function (allBps) {
+      res.json(allBps);
+    });
+  });
 }
+
+

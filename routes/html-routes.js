@@ -51,7 +51,7 @@ module.exports = function(app, router) {
     app.get("/calendar", function(req, res) {
       res.render('calendar', {
         title: "calendar",
-        layout: "dashboard",
+        
         style: "dashboard.css"
       });
     });
@@ -59,7 +59,7 @@ module.exports = function(app, router) {
     app.get("/calendar/events", function(req, res){
       res.render('home', {
         title: "Calendar Events",
-        layout: "dashboard",
+        
         style: "dashboard.css"
       });
     });

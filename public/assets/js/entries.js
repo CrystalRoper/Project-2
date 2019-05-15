@@ -8,12 +8,30 @@ function UpdateOnScreenControls() {
     HideAllContainers();
 
     switch ($("#selectEntryType").val()) {
-        case "rx": $("#prescriptionInputs").show(); break;
-        case "md": $("#doctorsNotesInputs").show(); break;
-        case "mh": $("#mentalHealthNotesInputs").show(); break;
-        case "ex": $("#exerciseNotesInputs").show(); break;
-        case "fd": $("#foodNotesInputs").show(); break;
-        case "bp": $("#bloodPressureNotesInputs").show(); break;
+        case "rx":
+            $("#prescriptionInputs").show();
+            LoadPrescriptionsList();
+            break;
+        case "md":
+            $("#doctorsNotesInputs").show();
+            LoadDoctorsNoteList();
+            break;
+        case "mh":
+            $("#mentalHealthNotesInputs").show();
+            LoadMentalHealthNotesList();
+            break;
+        case "ex":
+            $("#exerciseNotesInputs").show();
+            LoadExerciseNotesList();
+            break;
+        case "fd":
+            $("#foodNotesInputs").show();
+            LoadFoodNotesList();
+            break;
+        case "bp":
+            $("#bloodPressureNotesInputs").show();
+            LoadBloodPressureNotesList();
+            break;
         default: alert("hey now we had a weird value" + $("#selectEntryType").val()); break;
     }
 };
@@ -50,7 +68,7 @@ function SavePrescription() {
     };
 
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadPrescriptionsList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
 
@@ -66,7 +84,7 @@ function SaveDoctorNote() {
     };
 
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadDoctorsNoteList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
 
@@ -82,7 +100,7 @@ function SaveMentalHealthNote() {
         }
     };
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadMentalHealthNotesList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
 
@@ -98,7 +116,7 @@ function SaveExerciseNote() {
         }
     };
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadExerciseNotesList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
 
@@ -117,7 +135,7 @@ function SaveFoodNote() {
         }
     };
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadFoodNotesList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
 
@@ -134,6 +152,153 @@ function SaveBloodPressureNote() {
         }
     };
     $.ajax(postArgs)
-        .then(function () { alert("Record added!"); })
+        .then(function () { LoadBloodPressureNotesList(); })
         .fail(function () { alert("Something went wrong, please try adding again."); });
 };
+
+function LoadPrescriptionsList() {
+    $("#displayPrescriptions").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/prescriptions/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (rxList) {
+        if (rxList.length === 0) {
+            rxList.push({ name: "No prescriptions", dosage: 0 });
+        }
+
+        for (var i = 0; i < rxList.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+            entry.innerHTML = rxList[i].name + " - dosage: " + rxList[i].dosage;
+            document.getElementById('displayPrescriptions').appendChild(entry);
+        }
+    })
+}
+
+function LoadDoctorsNoteList() {
+    $("#displaySelectedEntries").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/doctors/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (list) {
+        if (list.length === 0) {
+            list.push({ name: "No doctor's notes", location: "" });
+        }
+
+        for (var i = 0; i < list.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+            entry.innerHTML = list[i].name + " - location: " + list[i].location;
+            document.getElementById('displaySelectedEntries').appendChild(entry);
+        }
+    })
+}
+
+function LoadMentalHealthNotesList() {
+    $("#displaySelectedEntries").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/mhnotes/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (list) {
+        if (list.length === 0) {
+
+            list.push({ date: "No mental health notes", mood: "", note: "" });
+        }
+
+        for (var i = 0; i < list.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+
+            entry.innerHTML = list[i].date + " - mood: " + list[i].mood + " note: " + list[i].note;
+            document.getElementById('displaySelectedEntries').appendChild(entry);
+        }
+    })
+}
+
+function LoadExerciseNotesList() {
+    $("#displaySelectedEntries").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/exercises/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (list) {
+        if (list.length === 0) {
+
+            list.push({ date: "No exercise notes", type: "", duration: "" });
+        }
+
+        for (var i = 0; i < list.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+
+            entry.innerHTML = list[i].date + " - type: " + list[i].type + " duration: " + list[i].duration;
+            document.getElementById('displaySelectedEntries').appendChild(entry);
+        }
+    })
+}
+
+function LoadFoodNotesList() {
+    $("#displaySelectedEntries").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/foods/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (list) {
+        if (list.length === 0) {
+
+            list.push({ date: "No food notes", meal: "", name: "", calorie: "", sugar: "", sodium: "" });
+        }
+
+        for (var i = 0; i < list.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+
+            entry.innerHTML = list[i].date + " - meal: " + list[i].meal + " name: " + list[i].name + " calorie: " + list[i].calorie + " sugar: " + list[i].sugar + " sodium: " + list[i].sodium;
+            document.getElementById('displaySelectedEntries').appendChild(entry);
+        }
+    })
+}
+
+function LoadBloodPressureNotesList() {
+    $("#displaySelectedEntries").html("");
+
+    var args = {
+        method: "GET",
+        url: "/api/bps/all",
+        data: {}
+    };
+
+    $.ajax(args).then(function (list) {
+        if (list.length === 0) {
+
+            list.push({ date: "No blood pressure notes", systolic: "", diastolic: "", pulse: "" });
+        }
+
+        for (var i = 0; i < list.length; i++) {
+            var entry = document.createElement('li');
+            entry.className = "list-group-item";
+
+            entry.innerHTML = list[i].date + " - systolic: " + list[i].systolic + " diastolic: " + list[i].diastolic + " pulse: " + list[i].pulse;
+            document.getElementById('displaySelectedEntries').appendChild(entry);
+        }
+    })
+}
+
