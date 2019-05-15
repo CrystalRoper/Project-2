@@ -1,0 +1,87 @@
+body {
+    background-image: url(../images/LandingPageGraphics/landing_bkground.png);
+    background-repeat: no-repeat;
+  }
+
+.logo{
+  position: relative;
+  left: 85px;
+  top: 250px;
+  z-index: 1;
+}
+
+.logo2{
+  position: relative;
+  left: 450px;
+  width: 125px;
+}
+
+h4{
+  position: absolute;
+  top: 270px;
+  left: 800px;
+  font-family: 'Source Sans Pro', sans-serif!important;
+  color: rgb(199, 196, 196);
+}
+
+.lines{
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.mb-4, .my-4 {
+  position: absolute;
+  left: 600px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+  left: 450px;
+  top: 60px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width:400px;
+}
+
+#firstName,#lastName,#inputEmail4,#inputPassword4,#inputAddress,#inputAddress2,#inputCity,#inputState,#inputZip,#exampleInputEmail1,#exampleInputPassword1{
+  border-radius: 0;
+  border-bottom-color: rgb(228, 225, 225);
+  
+}
+  
+.btn-primary{
+  position: relative;
+  left: 500px;
+  top: 90px;
+  background-color: #FF6633;
+  border: none;
+  padding:10px;
+}
+
+.btn-lg-Login{
+  width: 150px;
+  
+}
+
+.btn-lg-SignUp{
+  width: 150px;
+  
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom:0.5px solid black;
+}
+
+.form-check-label {
+  margin-bottom: 10px;
+  top: 5px;
+  position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(199, 196, 196);
+}

@@ -1,9 +1,8 @@
 {
-<<<<<<< HEAD
   "development": {
     "username": "root",
-    "password": "Efemir.2010",
-    "database": "testing",
+    "password": "!everagaiN90",
+    "database": "Ontrack",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
@@ -25,30 +24,3 @@
     "dialect": "mysql"
   }
 }
-=======
-    "development": {
-      "username": "root",
-      "password": "!everagaiN90",
-      "database": "ontrack",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    },
-    "test": {
-      "username": "root",
-      "password": "Perrin37",
-      "database": "ontrack",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    },
-    "production": {
-      "username": "root",
-      "password": "Perrin37",
-      "database": "ontrack",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    }
-  }
->>>>>>> 0d5210b52d55f668f1c18c25812b0d9073f843c6
