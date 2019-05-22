@@ -8,7 +8,7 @@ var express = require('express')
 var passport = require('passport')
 var session = require('express-session')
 var bodyParser = require('body-parser')
-var env = require('dotenv').config()
+//var env = require('dotenv').config()
 var exphbs = require('express-handlebars')
 var router = express.Router();
 
