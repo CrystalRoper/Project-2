@@ -1,6 +1,6 @@
 # Project-2: OnTrack
 
-![OnTrack](/public/assets/images/read-me-image.PNG)
+![OnTrack](/public/images/read-me-image.PNG)
 
 ## Description
 
