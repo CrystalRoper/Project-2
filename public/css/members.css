@@ -1,0 +1,47 @@
+.logo2{
+    width:150px;
+}
+
+.navbar{
+    font-family: 'Source Sans Pro', sans-serif;
+     
+}
+p {
+    font-size: 16px;
+}
+#head {
+    text-align: center;
+}
+#logo2 {padding-left: 10px;}
+
+li {padding: 5px;
+padding-left: 25px;}
+#calendar{
+    width: 750px;
+    height: 350px;
+    margin-bottom: 150px;
+  }
+.patientSidebar {
+    background-image: url(../images/LandingPageGraphics/landing_bkground.png);
+height: 800px;
+text-align: center;
+
+}  
+#block{
+    height: 50px;
+}
+
+ul{
+    list-style-image: url('../images/DashBoardGraphics/heartIcon.png');  
+}
+
+.patientSidebar {padding: 10px;
+width: 300px;}
+
+.quoteSection{
+    width:800px;
+    margin-bottom: 20px;
+}
+#profilePic{
+    margin: 20px;
+}
