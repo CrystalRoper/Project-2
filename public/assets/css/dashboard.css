@@ -1,0 +1,167 @@
+.logo2{
+    width:150px;
+}
+
+.navbar{
+    font-family: 'Source Sans Pro', sans-serif;
+     
+}
+
+.profileSidebarBg{
+    z-index: -99;
+    position: absolute;
+    left: 0px;
+}
+
+h3{
+    color: white;
+    padding: 10px;
+}
+
+h2{
+    color: white;
+    padding: 10px;
+}
+
+.header#name{
+    position: relative;
+    top: -95px;
+    left: 75px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+}
+
+img.profilePic{
+    position: relative;
+    top: 80px;
+    left: 60px;
+    z-index: 1;
+
+}
+
+.arrow{
+    position: relative;
+    left: 135px;
+}
+
+.cardSection{
+    width: 600px;
+    position: relative;
+    left: 317px;
+    top: -230px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.quoteSection{
+    width: 740px;
+    position: relative;
+    left: 300px;
+    top: -276px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.healthTrackerCard{
+    width: 900px;
+    position: relative;
+    left: 300px;
+    top: -168px;
+    
+}
+
+ #statCardInputWrapper{
+    width: 68em;
+    padding: 5px;
+    position: relative;
+    top: 25px;
+    left: -4px;
+}
+
+   
+a.btn.btn-primary{
+    position: absolute;
+    top: -13px;
+    left: -95px;
+   
+}
+
+
+.nameSideBarBg{
+    left: -168px;
+    position: relative;
+    top: -42px;
+}
+
+
+#cardStat{
+    position: relative;
+    left: 175px;
+    top: -5px;
+}
+
+.DOB{
+    position: relative;
+    top: 100px;
+    left: 100px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+}
+
+#DOB{
+    position: relative;
+    top: 120px;
+    left: 73px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3em;
+}
+
+
+.healthPlan{
+    position: relative;
+    top: 150px;
+    left: 66px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+}
+
+#healthPlan{
+    position: relative;
+    top: 170px;
+    left: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3em;
+}
+
+.PCP{
+    position: relative;
+    top: 200px;
+    left: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    
+}
+
+#PCP{
+    position: relative;
+    top: 225px;
+    left: 80px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3em;
+}
+
+.shopcard-body{
+    position: relative;
+    top: -380px;
+    left: 1145px;
+}
+
+ul{
+    list-style-image: url('../images/DashBoardGraphics/heartIcon.png');  
+}
+
+#calendar{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    left: 100px;
+    top: -86px;
+}
